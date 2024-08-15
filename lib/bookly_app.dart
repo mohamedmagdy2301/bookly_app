@@ -1,3 +1,5 @@
+import 'package:bookly_app/core/routers/routers_manager.dart';
+import 'package:bookly_app/core/theme/theming_app.dart';
 import 'package:flutter/material.dart';
 
 class BooklyApp extends StatelessWidget {
@@ -5,10 +7,10 @@ class BooklyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+    return MaterialApp.router(
+      routerConfig: RoutersManager.router,
+      showSemanticsDebugger: false,
+      theme: appTheme,
     );
   }
 }
