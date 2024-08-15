@@ -14,6 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    goToHomeScreen();
   }
 
   @override
@@ -24,6 +25,15 @@ class _SplashScreenState extends State<SplashScreen> {
           image: AssetImage(AssetsManager.logo),
         ),
       ),
+    );
+  }
+
+  void goToHomeScreen() {
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        GoRouter.of(context).push(RoutersManager.kHomeScreen);
+      },
     );
   }
 }
