@@ -9,7 +9,7 @@ class BooklyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: RoutersManager.router,
-      showSemanticsDebugger: false,
+      debugShowCheckedModeBanner: false,
       theme: appTheme,
     );
   }

@@ -4,8 +4,7 @@ import 'package:go_router/go_router.dart';
 
 class RoutersManager {
   static const String kSplashScreen = '/';
-  static const String kHomeScreen =
-      "lib/features/home/ui/screens/home_screen.dart";
+  static const String kHomeScreen = "/homeView";
 
   static final router = GoRouter(
     routes: [
