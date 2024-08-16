@@ -1,5 +1,5 @@
+import 'package:bookly_app/core/helper/style_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CustomBestSellerTitle extends StatelessWidget {
   const CustomBestSellerTitle({
@@ -8,11 +8,9 @@ class CustomBestSellerTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'Best Seller',
-      style: GoogleFonts.montserrat(
-        fontSize: 18,
-      ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: Text('Best Seller', style: StyleManager.textStyleSemiBold18),
     );
   }
 }

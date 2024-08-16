@@ -10,20 +10,18 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Padding(
-        padding: EdgeInsets.only(top: 50, left: 20, right: 20),
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(child: CustomAppBar()),
-            SliverToBoxAdapter(child: SizedBox(height: 20)),
-            SliverToBoxAdapter(child: FeatureBooksListView()),
-            SliverToBoxAdapter(child: SizedBox(height: 50)),
-            SliverToBoxAdapter(child: CustomBestSellerTitle()),
-            SliverToBoxAdapter(child: SizedBox(height: 20)),
-            SliverFillRemaining(child: BestSellerListView()),
-            SliverToBoxAdapter(child: SizedBox(height: 50)),
-          ],
-        ),
+      body: CustomScrollView(
+        physics: BouncingScrollPhysics(),
+        slivers: [
+          SliverToBoxAdapter(child: CustomAppBar()),
+          SliverToBoxAdapter(child: SizedBox(height: 40)),
+          SliverToBoxAdapter(child: FeatureBooksListView()),
+          SliverToBoxAdapter(child: SizedBox(height: 45)),
+          SliverToBoxAdapter(child: CustomBestSellerTitle()),
+          SliverToBoxAdapter(child: SizedBox(height: 10)),
+          SliverToBoxAdapter(child: BestSellerListView()),
+          SliverToBoxAdapter(child: SizedBox(height: 10)),
+        ],
       ),
     );
   }

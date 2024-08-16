@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StyleManager {
-  static const String kGTSectraFineFamily = "GT Sectra Fine Book";
+  static const String kGTSectionRegularFamily = "GT Sectra Fine Regular";
   static var kMontserratFamily = GoogleFonts.montserrat().fontFamily;
 
   static TextStyle textStyle14 = TextStyle(
@@ -33,9 +33,16 @@ class StyleManager {
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle textStyle20 = TextStyle(
-    fontSize: 20,
-    fontFamily: kGTSectraFineFamily,
+  static TextStyle textStyleSemiBold18 = TextStyle(
+    fontSize: 18,
+    fontFamily: kMontserratFamily,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w600,
+  );
+
+  static const TextStyle textStyle18 = TextStyle(
+    fontSize: 18,
+    fontFamily: kGTSectionRegularFamily,
     fontStyle: FontStyle.normal,
   );
 }
