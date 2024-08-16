@@ -1,10 +1,8 @@
-import 'package:bookly_app/core/assets/assets_manager.dart';
 import 'package:bookly_app/features/home/ui/widgets/best_seller_listview.dart';
 import 'package:bookly_app/features/home/ui/widgets/custom_appbar.dart';
 import 'package:bookly_app/features/home/ui/widgets/custom_bestseller_title.dart';
 import 'package:bookly_app/features/home/ui/widgets/feature_book_listview.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -19,7 +17,7 @@ class HomeScreen extends StatelessWidget {
             SliverToBoxAdapter(child: CustomAppBar()),
             SliverToBoxAdapter(child: SizedBox(height: 20)),
             SliverToBoxAdapter(child: FeatureBooksListView()),
-            SliverToBoxAdapter(child: SizedBox(height: 40)),
+            SliverToBoxAdapter(child: SizedBox(height: 50)),
             SliverToBoxAdapter(child: CustomBestSellerTitle()),
             SliverToBoxAdapter(child: SizedBox(height: 20)),
             SliverFillRemaining(child: BestSellerListView()),

@@ -1,5 +1,5 @@
+import 'package:bookly_app/core/helper/style_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class BookPrice extends StatelessWidget {
   const BookPrice({super.key});
@@ -8,10 +8,7 @@ class BookPrice extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       '19.99 €',
-      style: GoogleFonts.montserrat(
-        fontSize: 16,
-        fontWeight: FontWeight.bold,
-      ),
+      style: StyleManager.textStyleBold16,
     );
   }
 }

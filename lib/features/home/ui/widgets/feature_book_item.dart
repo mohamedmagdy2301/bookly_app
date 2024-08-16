@@ -1,4 +1,4 @@
-import 'package:bookly_app/core/assets/assets_manager.dart';
+import 'package:bookly_app/core/helper/assets_manager.dart';
 import 'package:flutter/material.dart';
 
 class FeatureBookItem extends StatelessWidget {

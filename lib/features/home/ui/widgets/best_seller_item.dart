@@ -1,8 +1,9 @@
-import 'package:bookly_app/core/assets/assets_manager.dart';
+import 'package:bookly_app/core/helper/assets_manager.dart';
+import 'package:bookly_app/core/helper/colors_manager.dart';
+import 'package:bookly_app/core/helper/style_manager.dart';
 import 'package:bookly_app/features/home/ui/widgets/best_seller_book_price.dart';
 import 'package:bookly_app/features/home/ui/widgets/best_seller_book_rating.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({super.key});
@@ -33,21 +34,11 @@ class BestSellerItem extends StatelessWidget {
                   'Harry Potter and the Goblet of Fire',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: "GT Sectra Fine Book",
-                  ),
+                  style: StyleManager.textStyle20,
                 ),
               ),
               const SizedBox(height: 4),
-              Text(
-                'J.K. Rowling',
-                style: GoogleFonts.montserrat(
-                  color: Colors.grey,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
+              Text('J.K. Rowling', style: StyleManager.textStyleMedium14),
               const SizedBox(height: 4),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

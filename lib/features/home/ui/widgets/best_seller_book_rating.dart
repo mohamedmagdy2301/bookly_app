@@ -1,5 +1,5 @@
+import 'package:bookly_app/core/helper/style_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class BookRating extends StatelessWidget {
   const BookRating({super.key});
@@ -14,23 +14,9 @@ class BookRating extends StatelessWidget {
           size: 19,
         ),
         const SizedBox(width: 4),
-        Text(
-          '4.8',
-          style: GoogleFonts.montserrat(
-            color: Colors.grey,
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        const SizedBox(width: 4),
-        Text(
-          '(2450)',
-          style: GoogleFonts.montserrat(
-            color: Colors.grey,
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
+        Text('4.8', style: StyleManager.textStyleMedium16),
+        const SizedBox(width: 3),
+        Text(' (2450)', style: StyleManager.textStyle14),
       ],
     );
   }
