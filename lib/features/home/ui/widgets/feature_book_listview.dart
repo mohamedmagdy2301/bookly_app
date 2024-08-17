@@ -13,7 +13,12 @@ class FeatureBooksListView extends StatelessWidget {
         itemCount: 10,
         scrollDirection: Axis.horizontal,
         itemBuilder: (itemContext, index) {
-          return const FeatureBookItem();
+          return const Padding(
+            padding: EdgeInsets.only(right: 10),
+            child: FeatureBookItem(
+              aspectRatio: 2.7 / 4,
+            ),
+          );
         },
       ),
     );

@@ -11,6 +11,7 @@ class StyleManager {
     fontFamily: kMontserratFamily,
     fontStyle: FontStyle.normal,
     color: ColorsManager.kPrimaryColorGrey,
+    fontWeight: FontWeight.w400,
   );
 
   static TextStyle textStyleMedium14 = TextStyle(
@@ -39,10 +40,23 @@ class StyleManager {
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.w600,
   );
-
+  static TextStyle textStyleMedium18 = TextStyle(
+    fontSize: 18,
+    fontFamily: kMontserratFamily,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w500,
+    color: ColorsManager.kPrimaryColorLightGrey,
+  );
   static const TextStyle textStyle18 = TextStyle(
     fontSize: 18,
     fontFamily: kGTSectionRegularFamily,
     fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w400,
+  );
+  static const TextStyle textStyle30 = TextStyle(
+    fontSize: 30,
+    fontFamily: kGTSectionRegularFamily,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w400,
   );
 }
