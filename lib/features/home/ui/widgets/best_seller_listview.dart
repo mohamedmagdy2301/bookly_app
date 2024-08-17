@@ -1,5 +1,7 @@
+import 'package:bookly_app/core/routers/routers_manager.dart';
 import 'package:bookly_app/features/home/ui/widgets/best_seller_item.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BestSellerListView extends StatelessWidget {
   const BestSellerListView({super.key});
@@ -14,7 +16,11 @@ class BestSellerListView extends StatelessWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (itemContext, index) {
-          return const BestSellerItem();
+          return GestureDetector(
+              onTap: () {
+                GoRouter.of(context).push(RoutersManager.kDetailsScreen);
+              },
+              child: const BestSellerItem());
         },
       ),
     );

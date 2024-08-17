@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        GoRouter.of(context).push(RoutersManager.kHomeScreen);
+        GoRouter.of(context).pushReplacement(RoutersManager.kHomeScreen);
       },
     );
   }
