@@ -1,36 +1,36 @@
+import 'package:equatable/equatable.dart';
+
 import 'image_links.dart';
 import 'industry_identifier.dart';
 import 'panelization_summary.dart';
 import 'reading_modes.dart';
 
-class VolumeInfo {
-  String? title;
-  String? subtitle;
-  List<String>? authors;
-  String? publisher;
-  String? publishedDate;
-  String? description;
-  List<IndustryIdentifier>? industryIdentifiers;
-  ReadingModes? readingModes;
-  int? pageCount;
-  String? printType;
-  List<String>? categories;
-  int? averageRating;
-  int? ratingsCount;
-  String? maturityRating;
-  bool? allowAnonLogging;
-  String? contentVersion;
-  PanelizationSummary? panelizationSummary;
-  ImageLinks? imageLinks;
-  String? language;
-  String? previewLink;
-  String? infoLink;
-  String? canonicalVolumeLink;
+class VolumeInfo extends Equatable {
+  final String? title;
+  final String? subtitle;
+  final List<dynamic>? authors;
+  final String? publisher;
+  final String? publishedDate;
+  final String? description;
+  final List<IndustryIdentifier>? industryIdentifiers;
+  final ReadingModes? readingModes;
+  final int? pageCount;
+  final String? printType;
+  final List<dynamic>? categories;
+  final String? maturityRating;
+  final bool? allowAnonLogging;
+  final String? contentVersion;
+  final PanelizationSummary? panelizationSummary;
+  final ImageLinks? imageLinks;
+  final String? language;
+  final String? previewLink;
+  final String? infoLink;
+  final String? canonicalVolumeLink;
 
-  VolumeInfo({
+  const VolumeInfo({
     this.title,
     this.subtitle,
-    this.authors,
+    required this.authors,
     this.publisher,
     this.publishedDate,
     this.description,
@@ -38,9 +38,7 @@ class VolumeInfo {
     this.readingModes,
     this.pageCount,
     this.printType,
-    this.categories,
-    this.averageRating,
-    this.ratingsCount,
+    required this.categories,
     this.maturityRating,
     this.allowAnonLogging,
     this.contentVersion,
@@ -55,7 +53,7 @@ class VolumeInfo {
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
         title: json['title'] as String?,
         subtitle: json['subtitle'] as String?,
-        authors: json['authors'] as List<String>?,
+        authors: json['authors'] as List<dynamic>?,
         publisher: json['publisher'] as String?,
         publishedDate: json['publishedDate'] as String?,
         description: json['description'] as String?,
@@ -68,9 +66,7 @@ class VolumeInfo {
                 json['readingModes'] as Map<String, dynamic>),
         pageCount: json['pageCount'] as int?,
         printType: json['printType'] as String?,
-        categories: json['categories'] as List<String>?,
-        averageRating: json['averageRating'] as int?,
-        ratingsCount: json['ratingsCount'] as int?,
+        categories: json['categories'] as List<dynamic>?,
         maturityRating: json['maturityRating'] as String?,
         allowAnonLogging: json['allowAnonLogging'] as bool?,
         contentVersion: json['contentVersion'] as String?,
@@ -100,8 +96,6 @@ class VolumeInfo {
         'pageCount': pageCount,
         'printType': printType,
         'categories': categories,
-        'averageRating': averageRating,
-        'ratingsCount': ratingsCount,
         'maturityRating': maturityRating,
         'allowAnonLogging': allowAnonLogging,
         'contentVersion': contentVersion,
@@ -112,4 +106,30 @@ class VolumeInfo {
         'infoLink': infoLink,
         'canonicalVolumeLink': canonicalVolumeLink,
       };
+
+  @override
+  List<Object?> get props {
+    return [
+      title,
+      subtitle,
+      authors,
+      publisher,
+      publishedDate,
+      description,
+      industryIdentifiers,
+      readingModes,
+      pageCount,
+      printType,
+      categories,
+      maturityRating,
+      allowAnonLogging,
+      contentVersion,
+      panelizationSummary,
+      imageLinks,
+      language,
+      previewLink,
+      infoLink,
+      canonicalVolumeLink,
+    ];
+  }
 }

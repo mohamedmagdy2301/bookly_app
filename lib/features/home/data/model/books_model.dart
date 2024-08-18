@@ -1,19 +1,19 @@
+import 'package:equatable/equatable.dart';
+
 import 'access_info.dart';
 import 'sale_info.dart';
-import 'search_info.dart';
 import 'volume_info.dart';
 
-class BooksModel {
-  String? kind;
-  String? id;
-  String? etag;
-  String? selfLink;
-  VolumeInfo? volumeInfo;
-  SaleInfo? saleInfo;
-  AccessInfo? accessInfo;
-  SearchInfo? searchInfo;
+class BookModel extends Equatable {
+  final String? kind;
+  final String? id;
+  final String? etag;
+  final String? selfLink;
+  final VolumeInfo? volumeInfo;
+  final SaleInfo? saleInfo;
+  final AccessInfo? accessInfo;
 
-  BooksModel({
+  const BookModel({
     this.kind,
     this.id,
     this.etag,
@@ -21,10 +21,9 @@ class BooksModel {
     this.volumeInfo,
     this.saleInfo,
     this.accessInfo,
-    this.searchInfo,
   });
 
-  factory BooksModel.fromJson(Map<String, dynamic> json) => BooksModel(
+  factory BookModel.fromJson(Map<String, dynamic> json) => BookModel(
         kind: json['kind'] as String?,
         id: json['id'] as String?,
         etag: json['etag'] as String?,
@@ -38,9 +37,6 @@ class BooksModel {
         accessInfo: json['accessInfo'] == null
             ? null
             : AccessInfo.fromJson(json['accessInfo'] as Map<String, dynamic>),
-        searchInfo: json['searchInfo'] == null
-            ? null
-            : SearchInfo.fromJson(json['searchInfo'] as Map<String, dynamic>),
       );
 
   Map<String, dynamic> toJson() => {
@@ -51,6 +47,18 @@ class BooksModel {
         'volumeInfo': volumeInfo?.toJson(),
         'saleInfo': saleInfo?.toJson(),
         'accessInfo': accessInfo?.toJson(),
-        'searchInfo': searchInfo?.toJson(),
       };
+
+  @override
+  List<Object?> get props {
+    return [
+      kind,
+      id,
+      etag,
+      selfLink,
+      volumeInfo,
+      saleInfo,
+      accessInfo,
+    ];
+  }
 }

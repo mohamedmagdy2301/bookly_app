@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:bookly_app/core/utils/assets_manager.dart';
+import 'package:bookly_app/features/home/data/repo/home_repo_impl.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -6,17 +9,22 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(top: 50, left: 20, right: 20),
+    return Padding(
+      padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
       child: Row(
         children: [
-          Image(
+          const Image(
             image: AssetImage(AssetsManager.logo),
             height: 16,
             width: 75,
           ),
-          Spacer(),
-          Icon(Icons.search),
+          const Spacer(),
+          IconButton(
+              onPressed: () {
+                HomeRepoImpl().fetchBestSellerBooks();
+                log("done--------------------------------------");
+              },
+              icon: const Icon(Icons.search)),
         ],
       ),
     );
