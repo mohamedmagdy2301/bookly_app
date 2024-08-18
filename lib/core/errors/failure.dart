@@ -18,17 +18,19 @@ class ServerFailure extends Failure {
         return ServerFailure("Connection timeout with API server");
       case DioExceptionType.cancel:
         return ServerFailure("Request to API server was cancelled");
-      case DioExceptionType.unknown:
-        return ServerFailure(
-            "Connection to API server failed due to internet connection");
       case DioExceptionType.badResponse:
         return ServerFailure.fromBadResponse(
             dioException.response!.statusCode!);
       case DioExceptionType.badCertificate:
-        return ServerFailure("Bad certificate in connection with API server");
+        return ServerFailure("Bad Certificate");
       case DioExceptionType.connectionError:
-        return ServerFailure("Connection Error");
-
+        return ServerFailure("No internet connection");
+      case DioExceptionType.unknown:
+        if (dioException.message!.contains("SocketException")) {
+          return ServerFailure("No internet connection");
+        } else {
+          return ServerFailure("Unexpected error occurred");
+        }
       default:
         return ServerFailure("Something went wrong !!!");
     }
@@ -49,12 +51,10 @@ class ServerFailure extends Failure {
         return ServerFailure("Unprocessable Entity");
       case 429:
         return ServerFailure("Too Many Requests");
-
       case 502:
         return ServerFailure("Bad Gateway");
       case 503:
         return ServerFailure("Service Unavailable");
-
       case 500:
         return ServerFailure("Internal Server Error");
       default:
