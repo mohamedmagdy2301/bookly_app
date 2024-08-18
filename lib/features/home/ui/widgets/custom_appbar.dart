@@ -1,8 +1,7 @@
-import 'dart:developer';
-
+import 'package:bookly_app/core/routers/routers_manager.dart';
 import 'package:bookly_app/core/utils/assets_manager.dart';
-import 'package:bookly_app/features/home/data/repo/home_repo_impl.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -21,8 +20,7 @@ class CustomAppBar extends StatelessWidget {
           const Spacer(),
           IconButton(
               onPressed: () {
-                HomeRepoImpl().fetchBestSellerBooks();
-                log("done--------------------------------------");
+                GoRouter.of(context).push(RoutersManager.kSearchScreen);
               },
               icon: const Icon(Icons.search)),
         ],
