@@ -1,5 +1,5 @@
-import 'package:bookly_app/core/helper/assets_manager.dart';
-import 'package:bookly_app/core/helper/style_manager.dart';
+import 'package:bookly_app/core/utils/assets_manager.dart';
+import 'package:bookly_app/core/utils/style_manager.dart';
 import 'package:bookly_app/features/home/ui/widgets/best_seller_book_price.dart';
 import 'package:bookly_app/features/home/ui/widgets/best_seller_book_rating.dart';
 import 'package:flutter/material.dart';
