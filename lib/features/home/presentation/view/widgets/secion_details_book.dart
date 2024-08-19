@@ -1,11 +1,13 @@
 import 'package:bookly_app/core/utils/style_manager.dart';
 import 'package:bookly_app/core/widgets/custom_button.dart';
+import 'package:bookly_app/features/home/data/model/books_model.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/feature_book_item.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/newest_book_rating.dart';
 import 'package:flutter/material.dart';
 
 class SecionDetailsBook extends StatelessWidget {
-  const SecionDetailsBook({super.key});
+  const SecionDetailsBook({super.key, this.bookModel});
+  final BookModel? bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +19,9 @@ class SecionDetailsBook extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(
               horizontal: width * 0.21, vertical: height * 0.02),
-          child: const FeatureBookItem(
+          child: FeatureBookItem(
             aspectRatio: 3 / 4,
+            bookModel: bookModel,
           ),
         ),
         const SizedBox(height: 5),
