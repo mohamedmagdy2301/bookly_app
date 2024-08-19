@@ -1,10 +1,10 @@
 import 'package:bookly_app/core/routers/routers_manager.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/best_seller_item.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/newest_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
+class NewestListView extends StatelessWidget {
+  const NewestListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class BestSellerListView extends StatelessWidget {
               onTap: () {
                 GoRouter.of(context).push(RoutersManager.kDetailsScreen);
               },
-              child: const BestSellerItem());
+              child: const NewestItem());
         },
       ),
     );

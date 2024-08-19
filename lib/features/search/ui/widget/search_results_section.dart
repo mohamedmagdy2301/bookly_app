@@ -1,5 +1,5 @@
 import 'package:bookly_app/core/utils/style_manager.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/best_seller_item.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/newest_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultsSection extends StatelessWidget {
@@ -27,7 +27,7 @@ class SearchResultsSection extends StatelessWidget {
             itemCount: 10,
             padding: EdgeInsets.zero,
             itemBuilder: (itemContext, index) {
-              return const BestSellerItem();
+              return const NewestItem();
             },
           ),
         ),

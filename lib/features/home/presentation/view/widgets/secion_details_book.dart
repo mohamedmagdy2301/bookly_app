@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/utils/style_manager.dart';
 import 'package:bookly_app/core/widgets/custom_button.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/best_seller_book_rating.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/feature_book_item.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/newest_book_rating.dart';
 import 'package:flutter/material.dart';
 
 class SecionDetailsBook extends StatelessWidget {
