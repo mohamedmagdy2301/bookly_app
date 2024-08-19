@@ -7,8 +7,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'feature_books_state.dart';
 
-class FeatureBooksCubit extends Cubit<FeatureBooksState> {
-  FeatureBooksCubit(this.homeRepo) : super(FeatureBooksInitial());
+class NewestBooksCubit extends Cubit<NewestBooksState> {
+  NewestBooksCubit(this.homeRepo) : super(FeatureBooksInitial());
   final HomeRepo homeRepo;
   Future<void> fatchFeatureBooks() async {
     emit(FeatureBooksLoading());
@@ -22,7 +22,7 @@ class FeatureBooksCubit extends Cubit<FeatureBooksState> {
       },
       (List<BookModel> featureBooksList) {
         emit(
-          FeatureBooksSuccess(featureBooksList: featureBooksList),
+          NewestBooksSuccess(featureBooksList: featureBooksList),
         );
       },
     );

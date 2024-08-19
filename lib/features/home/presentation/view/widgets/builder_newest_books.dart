@@ -1,12 +1,12 @@
 import 'package:bookly_app/core/widgets/custom_circular_progress_loading.dart';
 import 'package:bookly_app/core/widgets/custom_failure_message.dart';
 import 'package:bookly_app/features/home/presentation/view%20model/feature_books_cubit/feature_books_cubit.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/feature_book_listview.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/newest_listview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BuilderFeatureBooks extends StatelessWidget {
-  const BuilderFeatureBooks({super.key});
+class BuilderNewestBooks extends StatelessWidget {
+  const BuilderNewestBooks({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +15,7 @@ class BuilderFeatureBooks extends StatelessWidget {
       child: BlocBuilder<NewestBooksCubit, NewestBooksState>(
         builder: (context, state) {
           if (state is NewestBooksSuccess) {
-            return FeatureBooksListView(
-              featureBooksList: state.featureBooksList,
-            );
+            return const NewestListView();
           } else if (state is FeatureBooksFailure) {
             return CustomFailureMessage(
               errorMessage: state.errorMessage,

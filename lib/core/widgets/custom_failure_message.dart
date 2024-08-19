@@ -8,26 +8,24 @@ class CustomFailureMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.274,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              const Icon(
-                CupertinoIcons.xmark_circle,
-                size: 100,
-                color: Color.fromARGB(169, 76, 76, 76),
-              ),
-              Text(
-                errorMessage,
-                style: StyleManager.textStyleMedium18.copyWith(
-                  color: const Color.fromARGB(186, 141, 141, 141),
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ],
-          )),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          const Icon(
+            CupertinoIcons.xmark_circle,
+            size: 100,
+            color: Color.fromARGB(169, 76, 76, 76),
+          ),
+          Text(
+            errorMessage,
+            style: StyleManager.textStyleMedium18.copyWith(
+              color: const Color.fromARGB(186, 141, 141, 141),
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }

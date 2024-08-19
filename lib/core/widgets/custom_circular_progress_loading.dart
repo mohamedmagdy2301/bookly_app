@@ -5,17 +5,14 @@ class CustomCircularProgressLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.274,
-        child: const Center(
-          child: CircularProgressIndicator(
-            color: Color.fromARGB(255, 255, 255, 255),
-            strokeWidth: 3,
-            backgroundColor: Color.fromARGB(255, 83, 83, 83),
-            strokeAlign: 4,
-          ),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20),
+      child: Center(
+        child: CircularProgressIndicator(
+          color: Color.fromARGB(255, 255, 255, 255),
+          strokeWidth: 3,
+          backgroundColor: Color.fromARGB(255, 83, 83, 83),
+          strokeAlign: 4,
         ),
       ),
     );

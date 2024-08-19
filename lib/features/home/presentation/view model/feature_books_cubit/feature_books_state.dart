@@ -2,23 +2,23 @@
 
 part of 'feature_books_cubit.dart';
 
-sealed class FeatureBooksState extends Equatable {
-  const FeatureBooksState();
+sealed class NewestBooksState extends Equatable {
+  const NewestBooksState();
 
   @override
   List<Object> get props => [];
 }
 
-final class FeatureBooksInitial extends FeatureBooksState {}
+final class FeatureBooksInitial extends NewestBooksState {}
 
-final class FeatureBooksLoading extends FeatureBooksState {}
+final class FeatureBooksLoading extends NewestBooksState {}
 
-final class FeatureBooksSuccess extends FeatureBooksState {
+final class NewestBooksSuccess extends NewestBooksState {
   List<BookModel> featureBooksList;
-  FeatureBooksSuccess({required this.featureBooksList});
+  NewestBooksSuccess({required this.featureBooksList});
 }
 
-final class FeatureBooksFailure extends FeatureBooksState {
+final class FeatureBooksFailure extends NewestBooksState {
   final String errorMessage;
   const FeatureBooksFailure({required this.errorMessage});
 }
