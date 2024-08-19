@@ -19,8 +19,8 @@ class ServerFailure extends Failure {
       case DioExceptionType.cancel:
         return ServerFailure("Request to API server was cancelled");
       case DioExceptionType.badResponse:
-        return ServerFailure.fromBadResponse(
-            dioException.response!.statusCode!);
+        return ServerFailure.fromBadResponse(dioException.response!.statusCode!,
+            dioException.response!.data!["error"]["message"]);
       case DioExceptionType.badCertificate:
         return ServerFailure("Bad Certificate");
       case DioExceptionType.connectionError:
@@ -35,28 +35,28 @@ class ServerFailure extends Failure {
         return ServerFailure("Something went wrong !!!");
     }
   }
-  factory ServerFailure.fromBadResponse(int statusCode) {
+  factory ServerFailure.fromBadResponse(int statusCode, dynamic response) {
     switch (statusCode) {
       case 400:
-        return ServerFailure("Bad Request");
+        return ServerFailure("Bad Request\n$response");
       case 401:
-        return ServerFailure("Unauthorized");
+        return ServerFailure("Unauthorized\n$response");
       case 403:
-        return ServerFailure("Forbidden");
+        return ServerFailure("Forbidden\n$response");
       case 404:
-        return ServerFailure("Not Found");
+        return ServerFailure("Not Found\n$response");
       case 409:
-        return ServerFailure("Conflict");
+        return ServerFailure("Conflict\n$response");
       case 422:
-        return ServerFailure("Unprocessable Entity");
+        return ServerFailure("Unprocessable Entity\n$response");
       case 429:
-        return ServerFailure("Too Many Requests");
+        return ServerFailure("Too Many Requests\n$response");
       case 502:
-        return ServerFailure("Bad Gateway");
+        return ServerFailure("Bad Gateway\n$response");
       case 503:
-        return ServerFailure("Service Unavailable");
+        return ServerFailure("Service Unavailable\n$response");
       case 500:
-        return ServerFailure("Internal Server Error");
+        return ServerFailure("Internal Server Error\n$response");
       default:
         return ServerFailure("Something went wrong");
     }
