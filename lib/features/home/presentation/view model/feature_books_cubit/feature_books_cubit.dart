@@ -20,9 +20,9 @@ class FeatureBooksCubitCubit extends Cubit<FeatureBooksState> {
           FeatureBooksFailure(errorMessage: failure.message),
         );
       },
-      (List<BookModel> books) {
+      (List<BookModel> featureBooksList) {
         emit(
-          FeatureBooksSuccess(books: books),
+          FeatureBooksSuccess(featureBooksList: featureBooksList),
         );
       },
     );

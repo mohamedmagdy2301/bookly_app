@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 part of 'feature_books_cubit.dart';
 
 sealed class FeatureBooksState extends Equatable {
@@ -12,8 +14,8 @@ final class FeatureBooksInitial extends FeatureBooksState {}
 final class FeatureBooksLoading extends FeatureBooksState {}
 
 final class FeatureBooksSuccess extends FeatureBooksState {
-  List<BookModel> books;
-  FeatureBooksSuccess({required this.books});
+  List<BookModel> featureBooksList;
+  FeatureBooksSuccess({required this.featureBooksList});
 }
 
 final class FeatureBooksFailure extends FeatureBooksState {
