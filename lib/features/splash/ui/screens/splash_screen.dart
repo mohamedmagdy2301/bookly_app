@@ -1,5 +1,5 @@
-import 'package:bookly_app/core/utils/assets_manager.dart';
 import 'package:bookly_app/core/routers/routers_manager.dart';
+import 'package:bookly_app/core/utils/assets_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return const Scaffold(
       body: Center(
         child: Image(
-          image: AssetImage(AssetsManager.logo),
+          image: AssetImage(AssetsManager.kLogo),
         ),
       ),
     );

@@ -13,7 +13,7 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         children: [
           const Image(
-            image: AssetImage(AssetsManager.logo),
+            image: AssetImage(AssetsManager.kLogo),
             height: 16,
             width: 75,
           ),

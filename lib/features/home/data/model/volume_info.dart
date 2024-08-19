@@ -8,7 +8,7 @@ import 'reading_modes.dart';
 class VolumeInfo extends Equatable {
   final String? title;
   final String? subtitle;
-  final List<dynamic>? authors;
+  final List<String>? authors;
   final String? publisher;
   final String? publishedDate;
   final String? description;
@@ -16,7 +16,9 @@ class VolumeInfo extends Equatable {
   final ReadingModes? readingModes;
   final int? pageCount;
   final String? printType;
-  final List<dynamic>? categories;
+  final List<String>? categories;
+  final double? averageRating;
+  final int? ratingsCount;
   final String? maturityRating;
   final bool? allowAnonLogging;
   final String? contentVersion;
@@ -30,7 +32,7 @@ class VolumeInfo extends Equatable {
   const VolumeInfo({
     this.title,
     this.subtitle,
-    required this.authors,
+    this.authors,
     this.publisher,
     this.publishedDate,
     this.description,
@@ -38,7 +40,9 @@ class VolumeInfo extends Equatable {
     this.readingModes,
     this.pageCount,
     this.printType,
-    required this.categories,
+    this.categories,
+    this.averageRating,
+    this.ratingsCount,
     this.maturityRating,
     this.allowAnonLogging,
     this.contentVersion,
@@ -53,7 +57,7 @@ class VolumeInfo extends Equatable {
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
         title: json['title'] as String?,
         subtitle: json['subtitle'] as String?,
-        authors: json['authors'] as List<dynamic>?,
+        authors: (json['authors'] as List<dynamic>?)?.cast<String>(),
         publisher: json['publisher'] as String?,
         publishedDate: json['publishedDate'] as String?,
         description: json['description'] as String?,
@@ -66,7 +70,9 @@ class VolumeInfo extends Equatable {
                 json['readingModes'] as Map<String, dynamic>),
         pageCount: json['pageCount'] as int?,
         printType: json['printType'] as String?,
-        categories: json['categories'] as List<dynamic>?,
+        categories: (json['categories'] as List<dynamic>?)?.cast<String>(),
+        averageRating: (json['averageRating'] as num?)?.toDouble(),
+        ratingsCount: json['ratingsCount'] as int?,
         maturityRating: json['maturityRating'] as String?,
         allowAnonLogging: json['allowAnonLogging'] as bool?,
         contentVersion: json['contentVersion'] as String?,
@@ -96,6 +102,8 @@ class VolumeInfo extends Equatable {
         'pageCount': pageCount,
         'printType': printType,
         'categories': categories,
+        'averageRating': averageRating,
+        'ratingsCount': ratingsCount,
         'maturityRating': maturityRating,
         'allowAnonLogging': allowAnonLogging,
         'contentVersion': contentVersion,
@@ -121,6 +129,8 @@ class VolumeInfo extends Equatable {
       pageCount,
       printType,
       categories,
+      averageRating,
+      ratingsCount,
       maturityRating,
       allowAnonLogging,
       contentVersion,

@@ -15,7 +15,9 @@ class BuilderNewestBooks extends StatelessWidget {
       child: BlocBuilder<NewestBooksCubit, NewestBooksState>(
         builder: (context, state) {
           if (state is NewestBooksSuccess) {
-            return const NewestListView();
+            return NewestListView(
+              newestBooksList: state.newestBooksList,
+            );
           } else if (state is NewestBooksFailure) {
             return SizedBox(
               height: MediaQuery.of(context).size.height * 0.44,
