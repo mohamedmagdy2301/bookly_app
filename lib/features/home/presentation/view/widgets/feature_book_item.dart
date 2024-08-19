@@ -13,7 +13,6 @@ class FeatureBookItem extends StatelessWidget {
             aspectRatio: aspectRatio,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
-              clipBehavior: Clip.antiAliasWithSaveLayer,
               child: CachedNetworkImage(
                 fit: BoxFit.fill,
                 imageUrl: bookModel!.volumeInfo!.imageLinks!.thumbnail!,
