@@ -10,12 +10,15 @@ class CustomFailureMessage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Icon(
             CupertinoIcons.xmark_circle,
             size: 100,
             color: Color.fromARGB(169, 76, 76, 76),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.02,
           ),
           Text(
             errorMessage,

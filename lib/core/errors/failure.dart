@@ -38,15 +38,15 @@ class ServerFailure extends Failure {
   factory ServerFailure.fromBadResponse(int statusCode, dynamic response) {
     switch (statusCode) {
       case 400:
-        return ServerFailure("Bad Request\n$response");
+        return ServerFailure("Bad Request, please tell developer\n$response");
       case 401:
-        return ServerFailure("Unauthorized\n$response");
+        return ServerFailure("Unauthorized Access\n$response");
       case 403:
-        return ServerFailure("Forbidden\n$response");
+        return ServerFailure("Forbidden Access\n$response");
       case 404:
-        return ServerFailure("Not Found\n$response");
+        return ServerFailure("Not Found any book");
       case 409:
-        return ServerFailure("Conflict\n$response");
+        return ServerFailure("Conflict Access\n$response");
       case 422:
         return ServerFailure("Unprocessable Entity\n$response");
       case 429:

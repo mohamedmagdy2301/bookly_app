@@ -16,7 +16,7 @@ class BooklyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) {
-            return NewestBooksCubit(
+            return FeatureBooksCubit(
               getIt.get<HomeRepoImpl>(),
             )..fatchFeatureBooks();
           },
