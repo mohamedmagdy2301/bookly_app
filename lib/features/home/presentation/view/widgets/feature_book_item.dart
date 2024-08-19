@@ -1,4 +1,5 @@
 import 'package:bookly_app/features/home/data/model/books_model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class FeatureBookItem extends StatelessWidget {
@@ -7,20 +8,18 @@ class FeatureBookItem extends StatelessWidget {
   final BookModel? bookModel;
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: aspectRatio,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          image: DecorationImage(
-            image: NetworkImage(
-              bookModel?.volumeInfo?.imageLinks?.thumbnail ??
-                  "https://th.bing.com/th/id/OIP.F4eiZn0Wjgp4EFtocph2BAHaFj?rs=1&pid=ImgDetMain",
+    return bookModel?.volumeInfo?.imageLinks?.thumbnail != null
+        ? AspectRatio(
+            aspectRatio: aspectRatio,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              child: CachedNetworkImage(
+                fit: BoxFit.fill,
+                imageUrl: bookModel!.volumeInfo!.imageLinks!.thumbnail!,
+              ),
             ),
-            fit: BoxFit.fill,
-          ),
-        ),
-      ),
-    );
+          )
+        : const SizedBox();
   }
 }
