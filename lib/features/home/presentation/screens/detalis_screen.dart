@@ -1,6 +1,6 @@
-import 'package:bookly_app/features/home/ui/widgets/detalis_book_app_bar.dart';
-import 'package:bookly_app/features/home/ui/widgets/secion_details_book.dart';
-import 'package:bookly_app/features/home/ui/widgets/section_similar_books_details.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/detalis_book_app_bar.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/secion_details_book.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/section_similar_books_details.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
