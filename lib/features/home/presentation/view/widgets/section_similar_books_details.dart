@@ -1,10 +1,11 @@
 import 'package:bookly_app/core/utils/style_manager.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/feature_book_item.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/builder_similar_books.dart';
 import 'package:flutter/material.dart';
 
 class SectionSimilarBooksDetails extends StatelessWidget {
   const SectionSimilarBooksDetails({super.key});
 
+  @override
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,21 +19,7 @@ class SectionSimilarBooksDetails extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 20),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.14,
-          child: ListView.builder(
-            itemCount: 10,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (itemContext, index) {
-              return const Padding(
-                padding: EdgeInsets.only(right: 10),
-                child: FeatureBookItem(
-                  aspectRatio: 2.7 / 4,
-                ),
-              );
-            },
-          ),
-        )
+        const BuilderSimilarBooks(),
       ],
     );
   }

@@ -4,6 +4,7 @@ import 'package:bookly_app/features/home/data/model/books_model.dart';
 import 'package:bookly_app/features/home/data/repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 
 part 'similar_books_state.dart';
 
@@ -11,10 +12,10 @@ class SimilarBooksCubit extends Cubit<SimilarBooksState> {
   SimilarBooksCubit(this.homeRepo) : super(SimilarBooksInitial());
 
   final HomeRepo homeRepo;
-  Future<void> fetchSimilarBooks() async {
+  Future<void> fetchSimilarBooks(category) async {
     emit(SimilarBooksLoading());
     Either<Failure, List<BookModel>> result =
-        await homeRepo.fetchSimilarBooks("cats");
+        await homeRepo.fetchSimilarBooks(category);
     result.fold((Failure failure) {
       emit(
         SimilarBooksFailure(errorMessage: failure.message),
