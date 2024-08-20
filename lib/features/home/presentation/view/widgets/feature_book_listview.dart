@@ -1,6 +1,8 @@
+import 'package:bookly_app/core/routers/routers_manager.dart';
 import 'package:bookly_app/features/home/data/model/books_model.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/feature_book_item.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class FeatureBooksListView extends StatelessWidget {
   const FeatureBooksListView({super.key, required this.featureBooksList});
@@ -17,9 +19,17 @@ class FeatureBooksListView extends StatelessWidget {
         itemBuilder: (itemContext, index) {
           return Padding(
             padding: const EdgeInsets.only(right: 10),
-            child: FeatureBookItem(
-              aspectRatio: 2.7 / 4,
-              bookModel: featureBooksList[index],
+            child: GestureDetector(
+              onTap: () {
+                GoRouter.of(context).push(
+                  RoutersManager.kDetailsScreen,
+                  extra: featureBooksList[index],
+                );
+              },
+              child: FeatureBookItem(
+                aspectRatio: 2.7 / 4,
+                bookModel: featureBooksList[index],
+              ),
             ),
           );
         },

@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/data/model/books_model.dart';
 import 'package:bookly_app/features/home/presentation/view/screens/detalis_screen.dart';
 import 'package:bookly_app/features/home/presentation/view/screens/home_screen.dart';
 import 'package:bookly_app/features/search/ui/screens/search_screens.dart';
@@ -22,7 +23,8 @@ class RoutersManager {
       ),
       GoRoute(
         path: kDetailsScreen,
-        builder: (context, state) => const DetailsScreen(),
+        builder: (context, state) =>
+            DetailsScreen(bookModel: state.extra as BookModel),
       ),
       GoRoute(
         path: kSearchScreen,

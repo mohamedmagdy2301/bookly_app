@@ -7,8 +7,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class NewestItem extends StatelessWidget {
-  const NewestItem({super.key, this.bookModel});
-  final BookModel? bookModel;
+  const NewestItem({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class NewestItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               child: CachedNetworkImage(
                 fit: BoxFit.fill,
-                imageUrl: bookModel?.volumeInfo?.imageLinks?.thumbnail ??
+                imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
                     AssetsManager.kNoImage,
               ),
             ),
@@ -37,14 +37,14 @@ class NewestItem extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
                   child: Text(
-                    bookModel?.volumeInfo?.title ?? 'No Title',
+                    bookModel.volumeInfo?.title ?? 'No Title',
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: StyleManager.textStyle18,
                   ),
                 ),
                 Text(
-                  bookModel?.volumeInfo?.authors?[0] ?? 'No Author',
+                  bookModel.volumeInfo?.authors?[0] ?? 'No Author',
                   style: StyleManager.textStyleMedium14,
                 ),
                 const SizedBox(height: 1),

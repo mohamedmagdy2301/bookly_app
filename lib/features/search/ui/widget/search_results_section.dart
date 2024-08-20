@@ -1,5 +1,4 @@
 import 'package:bookly_app/core/utils/style_manager.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/newest_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultsSection extends StatelessWidget {
@@ -24,10 +23,12 @@ class SearchResultsSection extends StatelessWidget {
         SizedBox(
           height: height,
           child: ListView.builder(
-            itemCount: 10,
+            itemCount: 1,
             padding: EdgeInsets.zero,
             itemBuilder: (itemContext, index) {
-              return const NewestItem();
+              return Text("search screen");
+
+              // return const NewestItem();
             },
           ),
         ),

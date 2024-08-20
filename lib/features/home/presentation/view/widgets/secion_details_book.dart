@@ -6,8 +6,8 @@ import 'package:bookly_app/features/home/presentation/view/widgets/newest_book_r
 import 'package:flutter/material.dart';
 
 class SecionDetailsBook extends StatelessWidget {
-  const SecionDetailsBook({super.key, this.bookModel});
-  final BookModel? bookModel;
+  const SecionDetailsBook({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +25,28 @@ class SecionDetailsBook extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 5),
-        const Text("The Jungle Book", style: StyleManager.textStyle30),
-        Text("J.K. Rowling", style: StyleManager.textStyleMedium18),
+        Text(
+          bookModel.volumeInfo?.title ?? " No Title",
+          style: StyleManager.textStyle30,
+          textAlign: TextAlign.center,
+          overflow: TextOverflow.ellipsis,
+          maxLines: 2,
+        ),
+        Text(
+          bookModel.volumeInfo?.authors?[0] ?? " No Author",
+          style: StyleManager.textStyleMedium18,
+          textAlign: TextAlign.center,
+        ),
         const SizedBox(height: 14),
-        const BookRating(),
+        BookRating(bookModel: bookModel),
         const SizedBox(height: 26),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomButton(
-              tilteButton: "19.99 €",
+              tilteButton: bookModel.saleInfo!.listPrice?.amount == null
+                  ? 'Free'
+                  : "${bookModel.saleInfo!.listPrice!.amount} €",
               textStyleButton:
                   StyleManager.textStyleBold16.copyWith(color: Colors.black),
               borderRadius: const BorderRadius.only(

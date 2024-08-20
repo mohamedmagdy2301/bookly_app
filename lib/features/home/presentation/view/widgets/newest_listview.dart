@@ -18,7 +18,8 @@ class NewestListView extends StatelessWidget {
       itemBuilder: (itemContext, index) {
         return GestureDetector(
           onTap: () {
-            GoRouter.of(context).push(RoutersManager.kDetailsScreen);
+            GoRouter.of(context).push(RoutersManager.kDetailsScreen,
+                extra: newestBooksList[index]);
           },
           child: NewestItem(bookModel: newestBooksList[index]),
         );
