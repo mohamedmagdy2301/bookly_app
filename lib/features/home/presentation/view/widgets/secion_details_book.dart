@@ -1,7 +1,7 @@
+import 'package:bookly/core/model/books_model.dart';
 import 'package:bookly/core/utils/colors_manager.dart';
 import 'package:bookly/core/utils/style_manager.dart';
 import 'package:bookly/core/widgets/custom_button.dart';
-import 'package:bookly/features/home/data/model/books_model.dart';
 import 'package:bookly/features/home/presentation/view/widgets/feature_book_item.dart';
 import 'package:bookly/features/home/presentation/view/widgets/newest_book_rating.dart';
 import 'package:flutter/cupertino.dart';

@@ -1,6 +1,6 @@
+import 'package:bookly/core/model/books_model.dart';
 import 'package:bookly/core/utils/assets_manager.dart';
 import 'package:bookly/core/utils/style_manager.dart';
-import 'package:bookly/features/home/data/model/books_model.dart';
 import 'package:bookly/features/home/presentation/view/widgets/newest_book_price.dart';
 import 'package:bookly/features/home/presentation/view/widgets/newest_book_rating.dart';
 import 'package:cached_network_image/cached_network_image.dart';

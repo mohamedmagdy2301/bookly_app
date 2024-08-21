@@ -1,10 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:bookly/core/errors/failure.dart';
-import 'package:bookly/features/home/data/model/books_model.dart';
+import 'package:bookly/core/model/books_model.dart';
 import 'package:bookly/features/home/data/repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
 
 part 'newest_books_state.dart';
 
