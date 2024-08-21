@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
             return [
               const SliverToBoxAdapter(
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CustomAppBar(),
                     SizedBox(height: 40),
