@@ -36,7 +36,8 @@ class RoutersManager {
       ),
       GoRoute(
         path: kSearchScreen,
-        builder: (context, state) => const SearchScreen(),
+        builder: (context, state) =>
+            BlocProvider<SearchBooksCubit>(child: const SearchScreen()),
       ),
     ],
   );

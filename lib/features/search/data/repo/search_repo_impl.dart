@@ -9,7 +9,7 @@ class SearchRepoImpl implements SearchRepo {
   ApiService apiService;
   SearchRepoImpl(this.apiService);
   @override
-  Future<Either<Failure, List<BookModel>>> fetchSearchResults(
+  Future<Either<Failure, List<BookModel>>> fetchSearchBooks(
       List<String> query) async {
     var data = await apiService.get(
         "volumes?Filtering=free-ebooks&q=${query.join(" ")}&maxResults=40");
