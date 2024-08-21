@@ -77,7 +77,7 @@ class SecionDetailsBook extends StatelessWidget {
                 );
               },
               tilteButton: "Preview",
-              icon: CupertinoIcons.book,
+              icon: CupertinoIcons.book_fill,
               textStyleButton: StyleManager.textStyleBold16,
               backgroundColorButton: const Color.fromARGB(255, 254, 126, 71),
               borderRadius: const BorderRadius.only(

@@ -11,7 +11,7 @@ class SearchTextFeildSection extends StatelessWidget {
       labelText: 'Search',
       suffixIcon: Icon(
         CupertinoIcons.search,
-        color: ColorsManager.kPrimaryColorGrey,
+        color: ColorsManager.kGrey,
       ),
     );
   }

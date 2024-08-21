@@ -20,7 +20,7 @@ class CustomTextFeild extends StatelessWidget {
         suffixIcon: suffixIcon,
         labelText: 'Search Book',
         labelStyle: TextStyle(
-          color: ColorsManager.kPrimaryColorGrey,
+          color: ColorsManager.kGrey,
         ),
       ),
     );
@@ -29,7 +29,7 @@ class CustomTextFeild extends StatelessWidget {
   OutlineInputBorder customOutlineInputBorder() {
     return OutlineInputBorder(
       borderRadius: const BorderRadius.all(Radius.circular(10)),
-      borderSide: BorderSide(color: ColorsManager.kPrimaryColorGrey),
+      borderSide: BorderSide(color: ColorsManager.kGrey),
     );
   }
 }

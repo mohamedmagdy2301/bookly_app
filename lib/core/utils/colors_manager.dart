@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ColorsManager {
   static const Color kPrimaryColorBlack = Color(0xFF100B20);
-  static Color kPrimaryColorLightGrey = Colors.white.withOpacity(0.7);
-  static Color kPrimaryColorGrey = Colors.white.withOpacity(0.5);
+  static Color kLightGrey = Colors.white.withOpacity(0.7);
+  static Color kGrey = Colors.white.withOpacity(0.5);
+  static Color kOrange = const Color.fromARGB(255, 254, 126, 71);
 }
