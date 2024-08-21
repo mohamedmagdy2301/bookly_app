@@ -4,15 +4,24 @@ import 'package:bookly_app/features/home/data/model/books_model.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/feature_book_item.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/newest_book_rating.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SecionDetailsBook extends StatelessWidget {
   const SecionDetailsBook({super.key, required this.bookModel});
   final BookModel bookModel;
 
+  Future<void> _launchInAppWithBrowserOptions(Uri url) async {
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
+    final Uri url = Uri.parse(bookModel.volumeInfo?.previewLink ??
+        "https://github.com/mohamedmagdy2301");
 
     return Column(
       children: [
@@ -30,7 +39,7 @@ class SecionDetailsBook extends StatelessWidget {
           style: StyleManager.textStyle30,
           textAlign: TextAlign.center,
           overflow: TextOverflow.ellipsis,
-          maxLines: 2,
+          maxLines: 1,
         ),
         Text(
           bookModel.volumeInfo?.authors?[0] ?? " No Author",
@@ -55,6 +64,9 @@ class SecionDetailsBook extends StatelessWidget {
               ),
             ),
             CustomButton(
+              onTap: () {
+                _launchInAppWithBrowserOptions(url);
+              },
               tilteButton: "Free preview",
               textStyleButton: StyleManager.textStyleBold16,
               backgroundColorButton: const Color.fromARGB(255, 254, 126, 71),
