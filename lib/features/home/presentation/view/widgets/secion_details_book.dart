@@ -20,8 +20,6 @@ class SecionDetailsBook extends StatelessWidget {
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
-    final Uri url = Uri.parse(bookModel.volumeInfo?.previewLink ??
-        "https://github.com/mohamedmagdy2301");
 
     return Column(
       children: [
@@ -65,7 +63,12 @@ class SecionDetailsBook extends StatelessWidget {
             ),
             CustomButton(
               onTap: () {
-                _launchInAppWithBrowserOptions(url);
+                _launchInAppWithBrowserOptions(
+                  Uri.parse(
+                    bookModel.volumeInfo?.previewLink ??
+                        "https://github.com/mohamedmagdy2301",
+                  ),
+                );
               },
               tilteButton: "Free preview",
               textStyleButton: StyleManager.textStyleBold16,
