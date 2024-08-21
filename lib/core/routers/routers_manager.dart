@@ -4,7 +4,9 @@ import 'package:bookly/features/home/data/repo/home_repo_impl.dart';
 import 'package:bookly/features/home/presentation/view%20model/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly/features/home/presentation/view/screens/detalis_screen.dart';
 import 'package:bookly/features/home/presentation/view/screens/home_screen.dart';
+import 'package:bookly/features/search/data/repo/search_repo_impl.dart';
 import 'package:bookly/features/search/presentation/screens/search_screens.dart';
+import 'package:bookly/features/search/presentation/view%20model/cubit/search_books_cubit.dart';
 import 'package:bookly/features/splash/ui/screens/splash_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -27,7 +29,7 @@ class RoutersManager {
       ),
       GoRoute(
         path: kDetailsScreen,
-        builder: (context, state) => BlocProvider(
+        builder: (context, state) => BlocProvider<SimilarBooksCubit>(
           create: (context) {
             return SimilarBooksCubit(getIt.get<HomeRepoImpl>());
           },
@@ -36,8 +38,11 @@ class RoutersManager {
       ),
       GoRoute(
         path: kSearchScreen,
-        builder: (context, state) =>
-            BlocProvider<SearchBooksCubit>(child: const SearchScreen()),
+        builder: (context, state) => BlocProvider<SearchBooksCubit>(
+            create: (context) {
+              return SearchBooksCubit(getIt.get<SearchRepoImpl>());
+            },
+            child: const SearchScreen()),
       ),
     ],
   );
