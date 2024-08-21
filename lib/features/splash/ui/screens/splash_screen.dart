@@ -1,5 +1,5 @@
-import 'package:bookly_app/core/routers/routers_manager.dart';
-import 'package:bookly_app/core/utils/assets_manager.dart';
+import 'package:bookly/core/routers/routers_manager.dart';
+import 'package:bookly/core/utils/assets_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

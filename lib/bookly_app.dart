@@ -1,9 +1,9 @@
-import 'package:bookly_app/core/routers/routers_manager.dart';
-import 'package:bookly_app/core/theme/theming_app.dart';
-import 'package:bookly_app/core/utils/service_locator.dart';
-import 'package:bookly_app/features/home/data/repo/home_repo_impl.dart';
-import 'package:bookly_app/features/home/presentation/view%20model/feature_books_cubit/feature_books_cubit.dart';
-import 'package:bookly_app/features/home/presentation/view%20model/newest_books_cubit/newest_books_cubit.dart';
+import 'package:bookly/core/routers/routers_manager.dart';
+import 'package:bookly/core/theme/theming_app.dart';
+import 'package:bookly/core/utils/service_locator.dart';
+import 'package:bookly/features/home/data/repo/home_repo_impl.dart';
+import 'package:bookly/features/home/presentation/view%20model/feature_books_cubit/feature_books_cubit.dart';
+import 'package:bookly/features/home/presentation/view%20model/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

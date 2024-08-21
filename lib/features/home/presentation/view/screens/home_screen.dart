@@ -1,7 +1,7 @@
-import 'package:bookly_app/core/widgets/tab_bar_build.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/builder_feature_books.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/builder_newest_books.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/custom_appbar.dart';
+import 'package:bookly/core/widgets/tab_bar_build.dart';
+import 'package:bookly/features/home/presentation/view/widgets/builder_feature_books.dart';
+import 'package:bookly/features/home/presentation/view/widgets/builder_newest_books.dart';
+import 'package:bookly/features/home/presentation/view/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

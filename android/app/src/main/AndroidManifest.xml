@@ -7,7 +7,7 @@
   </intent>
 </queries>
     <application
-        android:label="bookly_app"
+        android:label="bookly"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

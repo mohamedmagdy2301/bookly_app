@@ -1,4 +1,4 @@
-import 'package:bookly_app/core/utils/style_manager.dart';
+import 'package:bookly/core/utils/style_manager.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultsSection extends StatelessWidget {

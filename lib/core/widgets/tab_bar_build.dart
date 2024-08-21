@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/colors_manager.dart';
 import 'package:flutter/material.dart';
 
 class TabBarBuild extends StatelessWidget {
@@ -9,19 +10,24 @@ class TabBarBuild extends StatelessWidget {
   Widget build(BuildContext context) {
     return TabBar(
       padding: const EdgeInsets.all(9),
-      labelColor: Colors.white,
-      unselectedLabelColor: const Color.fromARGB(255, 211, 210, 210),
-      labelStyle: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
-      unselectedLabelStyle:
-          const TextStyle(fontWeight: FontWeight.w400, fontSize: 15),
-      splashBorderRadius: BorderRadius.circular(50),
+      labelStyle: const TextStyle(
+        fontWeight: FontWeight.w600,
+        fontSize: 16,
+        color: Colors.white,
+      ),
+      unselectedLabelStyle: TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: 15,
+        color: ColorsManager.kLightGrey,
+      ),
+      splashBorderRadius: BorderRadius.circular(10),
       indicatorColor: const Color.fromARGB(192, 255, 255, 255),
       indicatorWeight: 2,
       indicatorSize: TabBarIndicatorSize.tab,
       indicatorPadding: const EdgeInsets.all(6),
       indicator: BoxDecoration(
-        borderRadius: BorderRadius.circular(50),
-        color: const Color.fromARGB(255, 189, 102, 2),
+        borderRadius: BorderRadius.circular(10),
+        color: ColorsManager.kOrange,
       ),
       isScrollable: true,
       dividerHeight: 0,

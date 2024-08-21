@@ -1,9 +1,9 @@
-import 'package:bookly_app/core/utils/colors_manager.dart';
-import 'package:bookly_app/core/utils/style_manager.dart';
-import 'package:bookly_app/core/widgets/custom_button.dart';
-import 'package:bookly_app/features/home/data/model/books_model.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/feature_book_item.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/newest_book_rating.dart';
+import 'package:bookly/core/utils/colors_manager.dart';
+import 'package:bookly/core/utils/style_manager.dart';
+import 'package:bookly/core/widgets/custom_button.dart';
+import 'package:bookly/features/home/data/model/books_model.dart';
+import 'package:bookly/features/home/presentation/view/widgets/feature_book_item.dart';
+import 'package:bookly/features/home/presentation/view/widgets/newest_book_rating.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -13,7 +13,11 @@ class SecionDetailsBook extends StatelessWidget {
   final BookModel bookModel;
 
   Future<void> _launchInAppWithBrowserOptions(Uri url) async {
-    await launchUrl(url);
+    await launchUrl(
+      url,
+      mode: LaunchMode.externalApplication,
+      webViewConfiguration: const WebViewConfiguration(enableJavaScript: true),
+    );
   }
 
   @override

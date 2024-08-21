@@ -1,6 +1,6 @@
-import 'package:bookly_app/core/routers/routers_manager.dart';
-import 'package:bookly_app/features/home/data/model/books_model.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/newest_item.dart';
+import 'package:bookly/core/routers/routers_manager.dart';
+import 'package:bookly/features/home/data/model/books_model.dart';
+import 'package:bookly/features/home/presentation/view/widgets/newest_item.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

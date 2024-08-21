@@ -1,5 +1,5 @@
-import 'package:bookly_app/core/utils/colors_manager.dart';
-import 'package:bookly_app/core/widgets/custom_text_feild.dart';
+import 'package:bookly/core/utils/colors_manager.dart';
+import 'package:bookly/core/widgets/custom_text_feild.dart';
 import 'package:flutter/cupertino.dart';
 
 class SearchTextFeildSection extends StatelessWidget {
