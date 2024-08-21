@@ -5,7 +5,7 @@ import 'package:bookly/features/home/data/repo/home_repo_impl.dart';
 import 'package:bookly/features/home/presentation/view%20model/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly/features/home/presentation/view/screens/detalis_screen.dart';
 import 'package:bookly/features/home/presentation/view/screens/home_screen.dart';
-import 'package:bookly/features/search/ui/screens/search_screens.dart';
+import 'package:bookly/features/search/presentation/screens/search_screens.dart';
 import 'package:bookly/features/splash/ui/screens/splash_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
