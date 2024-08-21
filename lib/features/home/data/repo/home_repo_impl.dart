@@ -9,10 +9,10 @@ class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
   HomeRepoImpl(this.apiService);
   @override
-  Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchNewestBooks(category) async {
     try {
       var data = await apiService.get(
-          "volumes?Filtering=free-ebooks&Sorting=newest&q=intitle:programming");
+          "volumes?Filtering=free-ebooks&Sorting=newest&q=intitle:$category");
       List<BookModel> booksList = [];
       for (var items in data["items"]) {
         booksList.add(BookModel.fromJson(items));

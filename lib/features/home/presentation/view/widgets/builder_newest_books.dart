@@ -5,8 +5,21 @@ import 'package:bookly_app/features/home/presentation/view/widgets/newest_listvi
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BuilderNewestBooks extends StatelessWidget {
-  const BuilderNewestBooks({super.key});
+class BuilderNewestBooks extends StatefulWidget {
+  const BuilderNewestBooks({super.key, required this.category});
+  final String category;
+
+  @override
+  State<BuilderNewestBooks> createState() => _BuilderNewestBooksState();
+}
+
+class _BuilderNewestBooksState extends State<BuilderNewestBooks> {
+  @override
+  initState() {
+    super.initState();
+    BlocProvider.of<NewestBooksCubit>(context)
+        .fatchNewestBooks(widget.category);
+  }
 
   @override
   Widget build(BuildContext context) {

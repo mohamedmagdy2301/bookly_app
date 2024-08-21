@@ -12,11 +12,7 @@ class SecionDetailsBook extends StatelessWidget {
   final BookModel bookModel;
 
   Future<void> _launchInAppWithBrowserOptions(Uri url) async {
-    await launchUrl(
-      url,
-      mode: LaunchMode.externalApplication,
-      webViewConfiguration: const WebViewConfiguration(enableJavaScript: true),
-    );
+    await launchUrl(url);
   }
 
   @override
@@ -63,14 +59,7 @@ class SecionDetailsBook extends StatelessWidget {
                 );
               },
               tilteButton: 'PDF',
-              widgetIcon: const Padding(
-                padding: EdgeInsets.only(left: 5),
-                child: Icon(
-                  CupertinoIcons.arrow_down_to_line_alt,
-                  color: Colors.black,
-                  size: 17,
-                ),
-              ),
+              icon: CupertinoIcons.arrow_down_to_line_alt,
               textStyleButton:
                   StyleManager.textStyleBold16.copyWith(color: Colors.black),
               borderRadius: const BorderRadius.only(
@@ -87,7 +76,8 @@ class SecionDetailsBook extends StatelessWidget {
                   ),
                 );
               },
-              tilteButton: "Free preview",
+              tilteButton: "Preview",
+              icon: CupertinoIcons.book,
               textStyleButton: StyleManager.textStyleBold16,
               backgroundColorButton: const Color.fromARGB(255, 254, 126, 71),
               borderRadius: const BorderRadius.only(

@@ -1,7 +1,7 @@
+import 'package:bookly_app/core/widgets/tab_bar_build.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/builder_feature_books.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/builder_newest_books.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/custom_appbar.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/custom_newest_title.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,19 +9,39 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: CustomScrollView(
-        physics: BouncingScrollPhysics(),
-        slivers: [
-          SliverToBoxAdapter(child: CustomAppBar()),
-          SliverToBoxAdapter(child: SizedBox(height: 40)),
-          SliverToBoxAdapter(child: BuilderFeatureBooks()),
-          SliverToBoxAdapter(child: SizedBox(height: 45)),
-          SliverToBoxAdapter(child: CustomNewestTitle()),
-          SliverToBoxAdapter(child: SizedBox(height: 10)),
-          SliverToBoxAdapter(child: BuilderNewestBooks()),
-          SliverToBoxAdapter(child: SizedBox(height: 10)),
-        ],
+    return DefaultTabController(
+      length: 6,
+      child: Scaffold(
+        body: NestedScrollView(
+          physics: const BouncingScrollPhysics(),
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return [
+              const SliverToBoxAdapter(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomAppBar(),
+                    SizedBox(height: 40),
+                    BuilderFeatureBooks(),
+                    SizedBox(height: 25),
+                    TabBarBuild(),
+                    SizedBox(height: 10),
+                  ],
+                ),
+              ),
+            ];
+          },
+          body: const TabBarView(
+            children: [
+              BuilderNewestBooks(category: 'Programming'),
+              BuilderNewestBooks(category: 'Science'),
+              BuilderNewestBooks(category: 'Health'),
+              BuilderNewestBooks(category: 'History'),
+              BuilderNewestBooks(category: 'Sports'),
+              BuilderNewestBooks(category: 'Technology'),
+            ],
+          ),
+        ),
       ),
     );
   }

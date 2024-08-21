@@ -14,11 +14,11 @@ class NewestItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
-      height: MediaQuery.of(context).size.height * 0.145,
+      height: MediaQuery.of(context).size.height * 0.15,
       child: Row(
         children: [
           AspectRatio(
-            aspectRatio: 2.7 / 4,
+            aspectRatio: 3 / 4,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: CachedNetworkImage(
@@ -46,6 +46,8 @@ class NewestItem extends StatelessWidget {
                 Text(
                   bookModel.volumeInfo?.authors?[0] ?? 'No Author',
                   style: StyleManager.textStyleMedium14,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 1),
                 Row(
