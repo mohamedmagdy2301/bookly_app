@@ -10,26 +10,23 @@ class BuilderNewestBooks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: BlocBuilder<NewestBooksCubit, NewestBooksState>(
-        builder: (context, state) {
-          if (state is NewestBooksSuccess) {
-            return NewestListView(
-              newestBooksList: state.newestBooksList,
-            );
-          } else if (state is NewestBooksFailure) {
-            return SizedBox(
+    return BlocBuilder<NewestBooksCubit, NewestBooksState>(
+      builder: (context, state) {
+        if (state is NewestBooksSuccess) {
+          return NewestListView(
+            newestBooksList: state.newestBooksList,
+          );
+        } else if (state is NewestBooksFailure) {
+          return SizedBox(
+            height: MediaQuery.of(context).size.height * 0.44,
+            child: CustomFailureMessage(errorMessage: state.errorMessage),
+          );
+        } else {
+          return SizedBox(
               height: MediaQuery.of(context).size.height * 0.44,
-              child: CustomFailureMessage(errorMessage: state.errorMessage),
-            );
-          } else {
-            return SizedBox(
-                height: MediaQuery.of(context).size.height * 0.44,
-                child: const CustomCircularProgressLoading());
-          }
-        },
-      ),
+              child: const CustomCircularProgressLoading());
+        }
+      },
     );
   }
 }

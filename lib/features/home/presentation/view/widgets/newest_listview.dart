@@ -10,20 +10,23 @@ class NewestListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 10,
-      padding: EdgeInsets.zero,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (itemContext, index) {
-        return GestureDetector(
-          onTap: () {
-            GoRouter.of(context).push(RoutersManager.kDetailsScreen,
-                extra: newestBooksList[index]);
-          },
-          child: NewestItem(bookModel: newestBooksList[index]),
-        );
-      },
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: ListView.builder(
+        itemCount: 10,
+        padding: EdgeInsets.zero,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemBuilder: (itemContext, index) {
+          return GestureDetector(
+            onTap: () {
+              GoRouter.of(context).push(RoutersManager.kDetailsScreen,
+                  extra: newestBooksList[index]);
+            },
+            child: NewestItem(bookModel: newestBooksList[index]),
+          );
+        },
+      ),
     );
   }
 }

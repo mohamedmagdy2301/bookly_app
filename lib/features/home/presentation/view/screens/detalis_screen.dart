@@ -18,7 +18,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
   @override
   void initState() {
     BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(
-      widget.bookModel.volumeInfo!.categories![0],
+      widget.bookModel.volumeInfo?.categories?[0] ?? "Science",
     );
     super.initState();
   }
