@@ -8,6 +8,7 @@ class CustomButton extends StatelessWidget {
     required this.tilteButton,
     required this.textStyleButton,
     this.onTap,
+    this.widgetIcon,
   });
   final BorderRadiusGeometry? borderRadius;
   final Color? backgroundColorButton;
@@ -15,7 +16,7 @@ class CustomButton extends StatelessWidget {
   final TextStyle textStyleButton;
 
   final void Function()? onTap;
-
+  final Widget? widgetIcon;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -27,7 +28,13 @@ class CustomButton extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: borderRadius ?? BorderRadius.circular(10),
             color: backgroundColorButton ?? Colors.white),
-        child: Text(tilteButton, style: textStyleButton),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(tilteButton, style: textStyleButton),
+            widgetIcon ?? const SizedBox(),
+          ],
+        ),
       ),
     );
   }

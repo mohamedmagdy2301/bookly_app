@@ -14,7 +14,7 @@ class NewestItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
-      height: MediaQuery.of(context).size.height * 0.133,
+      height: MediaQuery.of(context).size.height * 0.145,
       child: Row(
         children: [
           AspectRatio(

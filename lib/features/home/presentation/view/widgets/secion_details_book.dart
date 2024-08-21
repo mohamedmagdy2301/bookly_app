@@ -3,6 +3,7 @@ import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:bookly_app/features/home/data/model/books_model.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/feature_book_item.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/newest_book_rating.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -11,9 +12,11 @@ class SecionDetailsBook extends StatelessWidget {
   final BookModel bookModel;
 
   Future<void> _launchInAppWithBrowserOptions(Uri url) async {
-    if (!await launchUrl(url)) {
-      throw Exception('Could not launch $url');
-    }
+    await launchUrl(
+      url,
+      mode: LaunchMode.externalApplication,
+      webViewConfiguration: const WebViewConfiguration(enableJavaScript: true),
+    );
   }
 
   @override
@@ -46,14 +49,28 @@ class SecionDetailsBook extends StatelessWidget {
         ),
         const SizedBox(height: 14),
         BookRating(bookModel: bookModel),
-        const SizedBox(height: 26),
+        const SizedBox(height: 18),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomButton(
-              tilteButton: bookModel.saleInfo!.listPrice?.amount == null
-                  ? 'Free'
-                  : "${bookModel.saleInfo!.listPrice!.amount} €",
+              onTap: () {
+                _launchInAppWithBrowserOptions(
+                  Uri.parse(
+                    bookModel.accessInfo?.pdf?.acsTokenLink ??
+                        "https://play.google.com/books/",
+                  ),
+                );
+              },
+              tilteButton: 'PDF',
+              widgetIcon: const Padding(
+                padding: EdgeInsets.only(left: 5),
+                child: Icon(
+                  CupertinoIcons.arrow_down_to_line_alt,
+                  color: Colors.black,
+                  size: 17,
+                ),
+              ),
               textStyleButton:
                   StyleManager.textStyleBold16.copyWith(color: Colors.black),
               borderRadius: const BorderRadius.only(
@@ -66,7 +83,7 @@ class SecionDetailsBook extends StatelessWidget {
                 _launchInAppWithBrowserOptions(
                   Uri.parse(
                     bookModel.volumeInfo?.previewLink ??
-                        "https://github.com/mohamedmagdy2301",
+                        "https://play.google.com/books/",
                   ),
                 );
               },

@@ -36,7 +36,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 children: [
                   const CustomAppBarDetalisScreen(),
                   SecionDetailsBook(bookModel: widget.bookModel),
-                  const Expanded(child: SizedBox()),
+                  const Expanded(child: SizedBox(height: 10)),
                   const SectionSimilarBooksDetails(),
                   const SizedBox(height: 30),
                 ],
