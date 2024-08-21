@@ -7,11 +7,12 @@ class CustomButton extends StatelessWidget {
     this.backgroundColorButton,
     required this.tilteButton,
     required this.textStyleButton,
+    this.iconColor,
     this.onTap,
     required this.icon,
   });
   final BorderRadiusGeometry? borderRadius;
-  final Color? backgroundColorButton;
+  final Color? backgroundColorButton, iconColor;
   final String tilteButton;
   final TextStyle textStyleButton;
 
@@ -36,7 +37,7 @@ class CustomButton extends StatelessWidget {
               padding: const EdgeInsets.only(left: 5),
               child: Icon(
                 icon,
-                color: Colors.black,
+                color: iconColor,
                 size: 17,
               ),
             ),

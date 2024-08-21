@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/utils/colors_manager.dart';
 import 'package:bookly_app/core/utils/style_manager.dart';
 import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:bookly_app/features/home/data/model/books_model.dart';
@@ -60,6 +61,7 @@ class SecionDetailsBook extends StatelessWidget {
               },
               tilteButton: 'PDF',
               icon: CupertinoIcons.arrow_down_to_line_alt,
+              iconColor: Colors.black,
               textStyleButton:
                   StyleManager.textStyleBold16.copyWith(color: Colors.black),
               borderRadius: const BorderRadius.only(
@@ -77,9 +79,9 @@ class SecionDetailsBook extends StatelessWidget {
                 );
               },
               tilteButton: "Preview",
-              icon: CupertinoIcons.book_fill,
+              icon: CupertinoIcons.book,
               textStyleButton: StyleManager.textStyleBold16,
-              backgroundColorButton: const Color.fromARGB(255, 254, 126, 71),
+              backgroundColorButton: ColorsManager.kOrange,
               borderRadius: const BorderRadius.only(
                 bottomRight: Radius.circular(16),
                 topRight: Radius.circular(16),
