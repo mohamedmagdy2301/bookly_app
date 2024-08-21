@@ -30,7 +30,7 @@ class RoutersManager {
         path: kDetailsScreen,
         builder: (context, state) => BlocProvider(
           create: (context) {
-            return SimilarBooksCubit(HomeRepoImpl(getIt.get<ApiService>()));
+            return SimilarBooksCubit(getIt.get<HomeRepoImpl>());
           },
           child: DetailsScreen(bookModel: state.extra as BookModel),
         ),
