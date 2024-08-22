@@ -1,6 +1,6 @@
 import 'package:bookly/core/utils/colors_manager.dart';
-import 'package:bookly/features/search/presentation/view/widget/search_text_feild_secion.dart';
 import 'package:bookly/features/search/presentation/view/widget/bulider_saerch_books.dart';
+import 'package:bookly/features/search/presentation/view/widget/search_text_feild_secion.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,7 @@ class SearchScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           const SliverToBoxAdapter(
-            child: SizedBox(height: 20),
+            child: SizedBox(height: 17),
           ),
           SliverAppBar(
             backgroundColor: Colors.transparent,

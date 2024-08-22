@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     CustomAppBar(),
-                    SizedBox(height: 40),
+                    SizedBox(height: 25),
                     BuilderFeatureBooks(),
                     SizedBox(height: 25),
                     TabBarBuild(),

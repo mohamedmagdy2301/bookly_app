@@ -38,8 +38,7 @@ class BuilderSearchBooks extends StatelessWidget {
         } else if (state is SearchBooksFailure) {
           return SizedBox(
               height: height * 0.8,
-              child: const CustomFailureMessage(
-                  errorMessage: "state.errorMessage"));
+              child: CustomFailureMessage(errorMessage: state.message));
         } else {
           return SizedBox(
               height: height * 0.87,

@@ -10,9 +10,10 @@ class SearchRepoImpl implements SearchRepo {
   SearchRepoImpl(this.apiService);
   @override
   Future<Either<Failure, List<BookModel>>> fetchSearchBooks(query) async {
-    var data = await apiService.get("&q=$query");
-    List<BookModel> booksList = [];
     try {
+      var data = await apiService.get("&q=$query");
+      List<BookModel> booksList = [];
+
       for (var items in data["items"]) {
         booksList.add(BookModel.fromJson(items));
       }

@@ -21,6 +21,4 @@ final class SearchBooksFailure extends SearchBooksState {
   final String message;
 
   const SearchBooksFailure(this.message);
-
-  get errorMessage => null;
 }

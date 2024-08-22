@@ -10,7 +10,7 @@ class SearchTextFeildSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 3),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 6),
       child: CustomTextFeild(
         labelText: 'Search',
         suffixIcon: Icon(
