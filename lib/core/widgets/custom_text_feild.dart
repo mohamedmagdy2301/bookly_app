@@ -6,13 +6,16 @@ class CustomTextFeild extends StatelessWidget {
     super.key,
     required this.suffixIcon,
     required this.labelText,
+    this.onSubmitted,
   });
   final Icon suffixIcon;
   final String labelText;
+  final void Function(String)? onSubmitted;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onSubmitted: onSubmitted,
       decoration: InputDecoration(
         border: customOutlineInputBorder(),
         enabledBorder: customOutlineInputBorder(),

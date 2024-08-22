@@ -10,7 +10,7 @@ part 'search_books_state.dart';
 class SearchBooksCubit extends Cubit<SearchBooksState> {
   SearchBooksCubit(this.searchRepo) : super(SearchBooksInitial());
   final SearchRepo searchRepo;
-  Future<void> fetchSearchBooks(List<String> query) async {
+  Future<void> fetchSearchBooks(query) async {
     emit(SearchBooksLoading());
     Either<Failure, List<BookModel>> result =
         await searchRepo.fetchSearchBooks(query);
