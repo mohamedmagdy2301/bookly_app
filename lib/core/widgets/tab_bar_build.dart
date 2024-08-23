@@ -27,7 +27,7 @@ class TabBarBuild extends StatelessWidget {
       indicatorPadding: const EdgeInsets.all(6),
       indicator: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: ColorsManager.kOrange,
+        color: ColorsManager.kGrey,
       ),
       isScrollable: true,
       dividerHeight: 0,

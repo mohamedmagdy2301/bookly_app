@@ -95,6 +95,9 @@ flutter:
         - asset: assets/fonts/GTSectraFine/GT Sectra Fine Book/GT Sectra Fine Book.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+    - family: Matemasie
+      fonts:
+        - asset: assets/fonts/Matemasie/Matemasie-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
