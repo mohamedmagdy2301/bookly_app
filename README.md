@@ -40,6 +40,19 @@ Bookly is a Flutter-based mobile application designed for book enthusiasts. It p
 
 ---
 
+## Screenshots
+
+| Splash Screen | Loading Books Screen | View Books Screen |
+|---|---|---|
+| ![Screenshot](assets/screenshots/splash.png) | ![Screenshot](assets/screenshots/loading.png) | ![Screenshot](assets/screenshots/book_home.png)  |
+
+| Default Search Screen | Search Books Screen | Details Books Screen |
+|---|---|---|
+| ![Screenshot](assets/screenshots/no_search_screen.png) | ![Screenshot](assets/screenshots/search_screen.png) | ![Screenshot](assets/screenshots/details_screen.png)  |
+
+---
+
+
 ## Installation
 
 1. Clone the repository:
