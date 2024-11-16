@@ -6,3 +6,4 @@ void main() {
   setupSericeLocator();
   runApp(const BooklyApp());
 }
+
